@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TheRaccoon City</title>
+    <meta charset="utf8">
+    <link href="ex1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!-- header defineix una zona a dins del body, sempre a la part
+superior-->
+
+<div ><img class="ima" src="Imagenes/Sin nombre.png" width="1300px"></div>
+
+    <header>
+        <h1 id="tit">The Raccoon City Store</h1>
+<!-- definim un navegador, com si fora una llista per ara
+les referencies no apunten enlloc-->
+        <nav id="menu-principal">
+            <li><a class="a2" href="../index.html">Inici</a></li>
+            <li><a class="a2" href="article">Productes</a></li>
+            <li><a class="a2" href="#">Serveis</a></li>
+            <li><a class="a2" href="#">Contacte</a></li>
+        </nav>
+        <h2>Store of mobile</h2>
+    </header>
+<!-- deifnim una nova etiqueta section (similar al div)-->
+<section>
+<!-- dins d'una secció podem definir diferents articles-->
+    <article class="casalloguer">
+        <h1>Samsung</h1>
+        <p>Modelo: Samsung Galaxy S23 Ultra</p>
+        <p><img src="https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202301/30/00157063605828009_2__1200x1200.jpg" width="80%"></p>
+        <p>Preu: 999,00€</p>
+        <a href="https://www.samsung.com/es/smartphones/galaxy-s24-ultra/buy/?cid=es_pd_ppc_prfmx_galaxy-s24_pre-order_eureka_multi_eureka-performance-max_hot_pfm">Ampliar informació</a>
+    </article>
+    <article class="casalloguer">
+        <h1>Iphone</h1>
+        <p>Modelo: Iphone 14 pro max</p>
+        <p><img src="https://m.media-amazon.com/images/I/71yzJoE7WlL._AC_UF894,1000_QL80_.jpg" width="65%"></p>
+        <p>Preu: 980,00€</p>
+        <a href="https://www.apple.com/es/iphone/compare/?modelList=iphone-15-pro-max,iphone-14-pro-max">Ampliar informació</a>
+        </article>
+    <article class="casalloguer"> 
+        <h1>Xiaomi</h1>
+        <p>Modelo: Xaomi 13 pro</p>
+        <p><img src="https://cdn.idealo.com/folder/Product/202243/2/202243250/s11_produktbild_max/xiaomi-13-pro.jpg" width="65%"></p>
+        <p>Preu: 899,99€</p>
+        <a href="https://www.mi.com/es/product/xiaomi-13-pro/">Ampliar informació</a>
+    </article>
+    <article class="casalloguer">
+        <h1>Huawei</h1>
+        <p>Modelo: Huawei p60 pro</p>
+        <p><img src="https://netrinoimages.s3.eu-west-2.amazonaws.com/2015/07/03/391083/448963/huawei_p60_pro_3d_model_c4d_max_obj_fbx_ma_lwo_3ds_3dm_stl_4612771.jpg" width="65%"></p>
+        <p>Preu: 1.099,00€</p>
+        <a href="https://consumer.huawei.com/es/phones/p60-pro/">Ampliar informació</a>
+    </article>
+    <article class="casalloguer">
+        <h1>OnePlus</h1>
+        <p>Modelo: Oneplus 9 pro</p>
+        <p><img src="https://m.media-amazon.com/images/I/71koYhbr-3S._AC_UF894,1000_QL80_.jpg" width="40%"></p>
+        <p>Preu: 389,00€</p>
+        <a href="https://www.oneplus.com/es/9-pro">Ampliar informació</a>
+    </article>
+    <article class="casalloguer">
+        <h1>OPPO</h1>
+        <p>Modelo: Oppo find x5 pro</p>
+        <p><img src="https://m.media-amazon.com/images/I/91SqLMOJxML._AC_UF894,1000_QL80_.jpg" width="50%"></p>
+        <p>Preu: 483,00€</p>
+        <a href="https://www.oppo.com/es/smartphones/series-find-x/find-x5-pro/">Ampliar informació</a>
+    </article>
+</section>
+<form method="post" action="https://result.php" class="F1">
+    <div class="Missatge1">
+    <label for="fname">Nom:</label>
+    <input type="text" id="fname" name="fname" value="Adrian"><br>
+    <label for="lname">Cognom:</label>
+    <input type="text" id="lname" name="lname" value="Calderon">
+    <p>Pais</p>
+    <select>
+       <option>Spain</option>
+        <option>Ecuador</option>
+    </select>
+    </div>
+    <div class="Missatge1">
+        <label  class="Missatge" id="fname">Missatge:</label><br>
+        <textarea>àrea de text</textarea>
+        <input class="btn" type="button" value = "enviar"><br>
+    </div>
+    </form>
+    <footer>
+        <article>
+            <a title="Instagram" href="https://www.instagram.com/adricalde10/"><img src="imagenes/Instagram.png" class="imagen" width="40px"></a>
+            <a title="twitter" href="https://twitter.com/SamsungEspana?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="imagenes/Twitter.png" class="imagen" width="45px"></a>
+        </article>
+        <p>©2023 The Raccoon City Store</p>
+    </footer>
+</body>
+</html>
