@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whac-A-Mole</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url(Imagenes/granja.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+        }
+        #game {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            margin: 5%;
+            width: auto;
+            /*border: 2px solid #333;*/
+            overflow: hidden;
+        }
+        #game img{
+            width: 30%;
+        }
+        #taula{
+            display: flex;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+        #mole {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            display: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Whac-A-Mole</h1>
+        <p>Score: <span id="score">0</span></p>
+        <div id="taula">
+            <div id="gam">
+                <img id="topo0" src="Imagenes/topoNo.png" onclick="hitMole(0)">
+                <img id="topo1" src="Imagenes/topoNo.png" onclick="hitMole(1)">
+                <img id="topo2" src="Imagenes/topoNo.png" onclick="hitMole(2)">
+                <img id="topo3" src="Imagenes/topoNo.png" onclick="hitMole(3)">
+                <img id="topo4" src="Imagenes/topoNo.png" onclick="hitMole(4)">
+                <img id="topo5" src="Imagenes/topoNo.png" onclick="hitMole(5)">
+                <img id="topo6" src="Imagenes/topoNo.png" onclick="hitMole(6)">
+                <img id="topo7" src="Imagenes/topoNo.png" onclick="hitMole(7)">
+                <img id="topo8" src="Imagenes/topoNo.png" onclick="hitMole(8)">
+            </div>
+        </div>
+    </div>
+<script>
+
+    var score = 0;
+    var posiciontopo = 0;
+    var audio = new Audio('Imagenes/boing.mp3');
+
+    function getRandomIndex() {
+        return Math.floor(Math.random() * 9); 
+    }
+    function borrartopo(){
+        for(let n=0; n<9; n++){
+            document.getElementById("topo"+n).src="Imagenes/topoNo.png";
+        }
+
+    }
+    function showMole() {
+    borrartopo();
+    var moleIndex = getRandomIndex();
+    var mole = document.getElementById("topo"+moleIndex);
+    mole.src = "Imagenes/topoSi.png";
+    posiciontopo = moleIndex;
+    }
+    
+    function hitMole(p) {
+        if (p==posiciontopo){
+            score++;
+            document.getElementById("score").innerText = score; 
+            audio.play();
+        } else {
+          score--;
+          if (score < 0){
+            score = 0;
+            }
+          document.getElementById("score").innerHTML = score;
+        }
+        
+
+
+
+
+
+        document.getElementById("topo"+p).src="Imagenes/topoPam.png";
+        /*if(sc){
+            
+            
+        } else {
+            score--;
+      if (score < 0){
+        score = 0;
+      }
+      document.getElementById("score").innerHTML = score;
+        }
+        */
+    }
+
+setInterval(showMole, 1000);
+</script>
+</body>
+</html>
+
