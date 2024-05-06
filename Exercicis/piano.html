@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+</head>
+<body>
+    <h1>Piano</h1>
+    <button onclick="miBoton(this)">Do</button>
+    <button onclick="miBoton(this)">Re</button>
+    <button onclick="miBoton(this)">Mi</button>
+    <button onclick="miBoton(this)">Fa</button>
+    <button onclick="miBoton(this)">Sol</button>
+    <button onclick="miBoton(this)">La</button>
+    <button onclick="miBoton(this)">Si</button>
+    <br>
+    <br>
+    <button onclick="borrar(this)">Esborrar Memoria</button>
+    <button onclick="actualizarContador(this)" id="Boton">Play Memoria</button>
+    <p id="contador"></p>
+   
+
+
+<script>
+    var arrayTeclas=[];
+
+function miBoton(pi) {
+    var audio = new Audio("videos/"+pi.innerHTML+".mp3");
+    audio.play();
+    arrayTeclas.push(pi.innerHTML);
+    actualizarContador();
+}
+function actualizarContador(pi) {
+  var contador = document.getElementById("contador").innerHTML = arrayTeclas;
+  contador.textContent = arrayTeclas.length;
+}
+function borrar(pi) {
+  contador.innerHTML = "";
+}
+document.getElementById("Boton").addEventListener("arrayTeclas", miBoton);
+</script>
+
+</body>
+</html>
