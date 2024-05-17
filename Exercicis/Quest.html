@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Preguntes</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .result { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Test de Preguntes</h1>
+    <div id="p1"></div>
+    <button id="r1" onclick="resposta(1)"></button>
+    <button id="r2" onclick="resposta(2)"></button>
+    <button id="r3" onclick="resposta(3)"></button>
+    <button id="r4" onclick="resposta(4)"></button>
+    <div id="result" class="result"></div>
+
+    <script>
+        let preguntes = [
+            ["Quina és la capital de França", 4, "Cincinnati", "Lugo", "Castellbell", "Paris"],
+            ["A quin continent es troba Luxemburg?", 1, "Europa", "Amèrica", "Oceania"]
+        ];
+
+        let numeropregunta = 0;
+        let encerts = 0;
+
+        function carregarPregunta() {
+            if (numeropregunta >= preguntes.length) {
+                document.getElementById('result').textContent = `Has encertat ${encerts} de ${preguntes.length} preguntes.`;
+                return;
+            }
+            let pregunta = preguntes[numeropregunta];
+            document.getElementById('p1').innerHTML = pregunta[0];
+            document.getElementById('r1').innerHTML = pregunta[2];
+            document.getElementById('r2').innerHTML = pregunta[3];
+            if (pregunta.length > 4) {
+                document.getElementById('r3').innerHTML = pregunta[4];
+            }  
+            if (pregunta.length > 5) {
+                document.getElementById('r4').innerHTML = pregunta[5];
+            } else{
+                document.getElementById('r4').style.display = 'none';
+            }
+        }
+
+        function resposta(numero) {
+            if (numero === preguntes[numeropregunta][1]) {
+                encerts++;
+            }
+            numeropregunta++;
+            carregarPregunta();
+        }
+
+        carregarPregunta();
+    </script>
+</body>
+</html>
